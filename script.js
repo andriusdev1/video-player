@@ -1,17 +1,44 @@
 const video = document.getElementById('video');
 const play = document.getElementById('play');
-const stop = document.getElementById('stop');
-const stopV = document.getElementById('stopV');
+const stopv = document.getElementById('stopv');
 const progress = document.getElementById('progress');
 const timestamp = document.getElementById('timestamp');
 
 //Play and pause video
 
-
+function toggleVideoStatus(){
+    if(video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
 //Update play/pause icon
 
-
+function updatePlayIcon()
+{
+    if(video.paused) {
+        play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
+    } else {
+        play.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
+    }
+}
 //Update progress & timestamp
+function updateProgress(){
+    return true;
+}
+//Set video
+
+function setVideoProgress(){
+    return true;
+}
+
+//Stop video
+function stopVideo(){
+    return currentTime = 0;
+    video.pause();
+}
+
 
 
 // Event listeners
@@ -22,8 +49,7 @@ video.addEventListener('timeupdate', updateProgress);
 
 play.addEventListener('click', toggleVideoStatus);
 
-
-stopV.addEventListener('click', stopVideo);
+stopv.addEventListener('click', stopVideo);
 progress.addEventListener('change', setVideoProgress);
-stop.addEventListener('click', stopVideo);
+
 
